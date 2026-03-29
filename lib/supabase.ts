@@ -41,8 +41,3 @@ export type PlatformListing = {
   stock: number
 }
 
-export type Log = {
-  id: string
-  message: string
-  created_at: string
-}

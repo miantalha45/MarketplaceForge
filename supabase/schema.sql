@@ -17,12 +17,6 @@ create table if not exists platform_listings (
   updated_at timestamptz default now()
 );
 
-create table if not exists logs (
-  id uuid primary key default gen_random_uuid(),
-  message text not null,
-  created_at timestamptz default now()
-);
-
 -- Seed: one product, two platform listings
 insert into products (id, name, global_stock)
 values ('00000000-0000-0000-0000-000000000001', 'Wireless Earbuds Pro', 100);

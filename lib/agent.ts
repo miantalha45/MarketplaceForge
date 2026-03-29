@@ -153,11 +153,6 @@ export async function runAgent(): Promise<AgentResult> {
     log(`Stock levels are consistent — no sync needed`)
   }
 
-  // ── 6. Persist all logs to DB ────────────────────────────────────────────
-  log('Saving activity logs...')
-  await supabase.from('logs').insert(
-    logs.map((l) => ({ message: l.message, created_at: l.timestamp }))
-  )
   log('Agent run complete ✓')
 
   return {
